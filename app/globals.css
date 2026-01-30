@@ -1,0 +1,219 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Paleta corporativa exacta del Figma: Morado #6b1f7b, Dorados chart, Grises corporativos */
+  --background: #fff;
+  --foreground: oklch(.145 0 0);
+  --card: #fff;
+  --card-foreground: oklch(.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(.145 0 0);
+  
+  /* Primary: Morado profundo #6b1f7b */
+  --primary: #6b1f7b;
+  --primary-foreground: oklch(1 0 0);
+  
+  /* Secondary: Morado suave corporativo */
+  --secondary: oklch(.95 .04 300);
+  --secondary-foreground: #6b1f7b;
+  
+  --muted: #ececf0;
+  --muted-foreground: #717182;
+  --accent: #e9ebef;
+  --accent-foreground: #030213;
+  --destructive: #d4183d;
+  --destructive-foreground: #fff;
+  --border: #0000001a;
+  --input: transparent;
+  --input-background: #f3f3f5;
+  --switch-background: #cbced4;
+  --ring: oklch(.708 0 0);
+  
+  /* Colores dorados y naranjas corporativos del Figma */
+  --chart-1: oklch(.646 .222 41.116);
+  --chart-2: oklch(.6 .118 184.704);
+  --chart-3: oklch(.398 .07 227.392);
+  --chart-4: oklch(.828 .189 84.429);
+  --chart-5: oklch(.769 .188 70.08);
+  
+  --radius: .625rem;
+  --sidebar: #f9f7fa;
+  --sidebar-foreground: oklch(.145 0 0);
+  --sidebar-primary: #6b1f7b;
+  --sidebar-primary-foreground: oklch(.985 0 0);
+  --sidebar-accent: #f3eaf5;
+  --sidebar-accent-foreground: #6b1f7b;
+  --sidebar-border: #e8d9ec;
+  --sidebar-ring: #6b1f7b;
+
+  /* Fondos de secciones con paleta corporativa: Morado, Dorados, Grises */
+  --section-events-bg: #f3eaf5;
+  --section-events-border: #6b1f7b;
+  --section-brothers-bg: oklch(.95 .08 41.116);
+  --section-brothers-border: oklch(.646 .222 41.116);
+  --section-sanctions-bg: #ffe8eb;
+  --section-sanctions-border: #d4183d;
+  --section-testimonies-bg: #f3eaf5;
+  --section-testimonies-border: #6b1f7b;
+  --section-contact-bg: oklch(.96 .08 41.116);
+  --section-contact-border: oklch(.828 .189 84.429);
+  --section-history-bg: oklch(.95 .08 41.116);
+  --section-history-border: oklch(.646 .222 41.116);
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #f5f5f5;
+  --card: #1a1a1a;
+  --card-foreground: #f5f5f5;
+  --popover: #1a1a1a;
+  --popover-foreground: #f5f5f5;
+  /* Tema oscuro con colores corporativos */
+  --primary: oklch(.828 .189 84.429);
+  --primary-foreground: #6b1f7b;
+  --secondary: #6b1f7b;
+  --secondary-foreground: #f5f5f5;
+  --muted: #404040;
+  --muted-foreground: #a0a0a0;
+  --accent: #6b1f7b;
+  --accent-foreground: oklch(.828 .189 84.429);
+  --destructive: #c41c3b;
+  --destructive-foreground: #f5f5f5;
+  --border: #404040;
+  --input: transparent;
+  --input-background: #2a2a2a;
+  --switch-background: #505050;
+  --ring: oklch(.6 .15 41.116);
+  --chart-1: oklch(.828 .189 84.429);
+  --chart-2: #6b1f7b;
+  --chart-3: #d4183d;
+  --chart-4: oklch(.646 .222 41.116);
+  --chart-5: oklch(.7 .2 50);
+  
+  --radius: .625rem;
+  --sidebar: #0a0a0a;
+  --sidebar-foreground: #f5f5f5;
+  --sidebar-primary: oklch(.828 .189 84.429);
+  --sidebar-primary-foreground: #6b1f7b;
+  --sidebar-accent: #6b1f7b;
+  --sidebar-accent-foreground: oklch(.828 .189 84.429);
+  --sidebar-border: #2a2a2a;
+  --sidebar-ring: oklch(.828 .189 84.429);
+
+  --section-events-bg: #1a0f20;
+  --section-events-border: oklch(.828 .189 84.429);
+  --section-brothers-bg: #1a1510;
+  --section-brothers-border: oklch(.646 .222 41.116);
+  --section-sanctions-bg: #2a0f1a;
+  --section-sanctions-border: #d4183d;
+  --section-testimonies-bg: #1a0f20;
+  --section-testimonies-border: oklch(.828 .189 84.429);
+  --section-contact-bg: #1a1510;
+  --section-contact-border: oklch(.828 .189 84.429);
+  --section-history-bg: #1a1510;
+  --section-history-border: oklch(.646 .222 41.116);
+}
+
+@theme inline {
+  --font-sans: 'Geist', 'Geist Fallback';
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-section-events-bg: var(--section-events-bg);
+  --color-section-events-border: var(--section-events-border);
+  --color-section-brothers-bg: var(--section-brothers-bg);
+  --color-section-brothers-border: var(--section-brothers-border);
+  --color-section-sanctions-bg: var(--section-sanctions-bg);
+  --color-section-sanctions-border: var(--section-sanctions-border);
+  --color-section-testimonies-bg: var(--section-testimonies-bg);
+  --color-section-testimonies-border: var(--section-testimonies-border);
+  --color-section-contact-bg: var(--section-contact-bg);
+  --color-section-contact-border: var(--section-contact-border);
+  --color-section-history-bg: var(--section-history-bg);
+  --color-section-history-border: var(--section-history-border);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Section backgrounds with color-mix for elegant, subtle effect */
+  .section-eventos {
+    @apply rounded-lg border;
+    background-color: color-mix(in oklab, var(--section-events-bg) 30%, transparent);
+    outline-color: color-mix(in oklab, var(--section-events-border) 50%, transparent);
+  }
+
+  .section-hermanos {
+    @apply rounded-lg border;
+    background-color: color-mix(in oklab, var(--section-brothers-bg) 30%, transparent);
+    outline-color: color-mix(in oklab, var(--section-brothers-border) 50%, transparent);
+  }
+
+  .section-sanciones {
+    @apply rounded-lg border;
+    background-color: color-mix(in oklab, var(--section-sanctions-bg) 30%, transparent);
+    outline-color: color-mix(in oklab, var(--section-sanctions-border) 50%, transparent);
+  }
+
+  .section-testimonios {
+    @apply rounded-lg border;
+    background-color: color-mix(in oklab, var(--section-testimonies-bg) 30%, transparent);
+    outline-color: color-mix(in oklab, var(--section-testimonies-border) 50%, transparent);
+  }
+
+  .section-contacto {
+    @apply rounded-lg border;
+    background-color: color-mix(in oklab, var(--section-contact-bg) 30%, transparent);
+    outline-color: color-mix(in oklab, var(--section-contact-border) 50%, transparent);
+  }
+
+  .section-historia {
+    @apply rounded-lg border;
+    background-color: color-mix(in oklab, var(--section-history-bg) 30%, transparent);
+    outline-color: color-mix(in oklab, var(--section-history-border) 50%, transparent);
+  }
+}
